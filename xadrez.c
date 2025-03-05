@@ -21,9 +21,19 @@ int main() {
     }
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("\nMovimento do Torre\n");
+    for(int index = 0; index < MOVIMENTO_TORRE; index++){
+        printf("Direita\n");
+    }
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    printf("\nMovimento do Rainha\n");
+    index = 0;
+    do{
+        printf("Esquerda\n");
+        index++;
+    }while(index < MOVIMENTO_RAINHA);
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
