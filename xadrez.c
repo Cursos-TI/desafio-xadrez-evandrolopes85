@@ -10,9 +10,15 @@ int main() {
     const int MOVIMENTO_TORRE = 5;
     const int MOVIMENTO_BISPO = 5;
     const int MOVIMENTO_RAINHA = 8;
+    int index = 0;
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
+    printf("Movimento do Bispo\n");
+    while(index < MOVIMENTO_BISPO){
+        printf("Cima");
+        printf(",Direita\n");
+        index++;
+    }
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
 
