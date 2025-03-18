@@ -5,10 +5,11 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int bispoRecursivo(int index); // Cabeçalho da função recursiva
-int torreRecursivo(int index); 
-int rainhaRecursivo(int index);
-int cavaloRecursivo(int index);
-int cavaloLoopAvancado(int movimento_cavalo);
+int torreRecursivo(int index);  // Cabeçalho da função recursiva
+int rainhaRecursivo(int index); // Cabeçalho da função recursiva
+int cavaloRecursivo(int index); // Cabeçalho da função recursiva
+int cavaloLoopAvancado(int movimentoCavalo); // Cabeçalho da função cavaloLoopAvancado
+int biscoComLoopAninhado(int movimentoBispo);  // Cabeçalho da função biscoComLoopAninhado
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -72,6 +73,9 @@ int main() {
 
     printf("\nMovimento da Cavalo com for avançado\n");
     cavaloLoopAvancado(MOVIMENTO_CAVALO);
+
+    printf("\nMovimento da Bispo com loops aninhados");
+    biscoComLoopAninhado(MOVIMENTO_BISPO);
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
@@ -112,13 +116,23 @@ int cavaloRecursivo(int index){
     cavaloRecursivo(index -1);
 }
 
-int cavaloLoopAvancado(int movimento_cavalo){
-    for(int linha = 0, coluna = movimento_cavalo; linha <= movimento_cavalo; linha++, coluna--){
+int cavaloLoopAvancado(int movimentoCavalo){
+    for(int linha = 0, coluna = movimentoCavalo; linha <= movimentoCavalo; linha++, coluna--){
         printf("Cima\n");
         if(linha == coluna){
             printf("Direita\n");
             break;
         }
+    }
+}
+
+int biscoComLoopAninhado(int movimentoBispo){
+    for(int linha = 0;linha <= movimentoBispo; linha++){
+        printf("Cima");
+        for(int coluna = 0;coluna <= linha; coluna++){
+            printf(",Direita\n");
+            break;
+        }    
     }
 }
 
