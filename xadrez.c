@@ -8,6 +8,7 @@ int bispoRecursivo(int index); // Cabeçalho da função recursiva
 int torreRecursivo(int index); 
 int rainhaRecursivo(int index);
 int cavaloRecursivo(int index);
+int cavaloLoopAvancado(int movimento_cavalo);
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -68,13 +69,16 @@ int main() {
 
     printf("\nMovimento da Cavalo com recursividade\n");
     cavaloRecursivo(MOVIMENTO_CAVALO);
+
+    printf("\nMovimento da Cavalo com for avançado\n");
+    cavaloLoopAvancado(MOVIMENTO_CAVALO);
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
     return 0;
 }
 
-int  bispoRecursivo(int index){
+int bispoRecursivo(int index){
     if(index <= 0){
         return 0;
     }
@@ -83,7 +87,7 @@ int  bispoRecursivo(int index){
     bispoRecursivo(index -1);
 }
 
-int  torreRecursivo(int index){
+int torreRecursivo(int index){
     if(index <= 0){
         return 0;
     }
@@ -91,7 +95,7 @@ int  torreRecursivo(int index){
     printf("Direita\n");
 }
 
-int  rainhaRecursivo(int index){
+int rainhaRecursivo(int index){
     if(index <= 0){
         return 0;
     }
@@ -99,12 +103,22 @@ int  rainhaRecursivo(int index){
     rainhaRecursivo(index -1);
 }
 
-int  cavaloRecursivo(int index){
+int cavaloRecursivo(int index){
     if(index <= 0){
         printf("Esquerda\n");
         return 0;
     }
     printf("Baixo\n");
     cavaloRecursivo(index -1);
+}
+
+int cavaloLoopAvancado(int movimento_cavalo){
+    for(int linha = 0, coluna = movimento_cavalo; linha <= movimento_cavalo; linha++, coluna--){
+        printf("Cima\n");
+        if(linha == coluna){
+            printf("Direita\n");
+            break;
+        }
+    }
 }
 
